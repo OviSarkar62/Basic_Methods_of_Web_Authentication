@@ -1,9 +1,9 @@
 # Basic Methods of Web Authentication
 
-Basic methods of web authentication including Encrypting Database, Hashing Password, Salting & Hashing.
+Basic methods of web authentication including Encrypting Database, Hashing Password, Salting & Hashing Password.
 
 ### Lesson1: Database Encryption
 
-### Lesson2: Hasing Password
+### Lesson2: Hashing Password
 
-### Lesson3: Hasing & Salting
+### Lesson3: Hashing & Salting Password
