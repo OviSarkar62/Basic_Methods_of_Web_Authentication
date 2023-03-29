@@ -26,7 +26,7 @@ Command Lines
 
 `npm start`
 
-Database Connection
+## Database Connection
 In the server side folder create .env file and put this code inside it.
 
 `DB_URL = mongodb+srv://<user>:<pass>@cluster0.l17quyr.mongodb.net/database`
