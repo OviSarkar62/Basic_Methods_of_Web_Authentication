@@ -15,8 +15,8 @@ Basic methods of web authentication including Encrypting Database, Hashing Passw
     userSchema.plugin(encrypt, { secret: encKey, encryptedFields: ['password'] });
 
 ### Hashing
-// For Register
-app.post("/register", async (req,res)=>{
+    // For Register
+    app.post("/register", async (req,res)=>{
     try{
         const newUser = new User({
             email: req.body.email,
@@ -27,10 +27,10 @@ app.post("/register", async (req,res)=>{
     } catch(error){
         res.status(500).json(error.message);
     }
-});
+    });
 
-// For Login
-app.post("/login", async (req,res)=>{
+    // For Login
+    app.post("/login", async (req,res)=>{
     try{
         const email = req.body.email;
         const password = md5(req.body.password);
@@ -43,4 +43,4 @@ app.post("/login", async (req,res)=>{
     } catch(error){
         res.status(500).json(error.message);
     }
-});
+    });
