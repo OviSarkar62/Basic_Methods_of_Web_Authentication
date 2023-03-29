@@ -2,7 +2,7 @@
 
 Basic methods of web authentication including Encrypting Database, Hashing Password, Salting & Hashing Password.
 
-### Lesson1: Database Encryption
+## Lesson1: Database Encryption
 
 Command Lines
 
@@ -10,7 +10,7 @@ Command Lines
 
 `npm start`
 
-### Lesson2: Hashing Password
+## Lesson2: Hashing Password
 
 Command Lines
 
@@ -18,7 +18,7 @@ Command Lines
 
 `npm start`
 
-### Lesson3: Hashing & Salting Password
+## Lesson3: Hashing & Salting Password
 
 Command Lines
 
