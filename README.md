@@ -35,6 +35,7 @@ In the server side folder create .env file and put this code inside it.
 
 ### Encryption
 
+    // For User Schema
     const encrypt = require('mongoose-encryption');
     var encKey = process.env.ENC_KEY;
     userSchema.plugin(encrypt, { secret: encKey, encryptedFields: ['password'] });
