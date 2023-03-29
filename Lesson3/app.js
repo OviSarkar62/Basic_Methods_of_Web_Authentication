@@ -1,10 +1,13 @@
-// Encrypting Database
+// Hashing & Salting Password
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const User = require("./Models/userModel");
 const app = express();
+
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 const PORT = process.env.PORT || 3002;
 const dbURL = process.env.DB_URL;
@@ -25,9 +28,15 @@ app.use(express.urlencoded({extended: true}));
 
 app.post("/register", async (req,res)=>{
     try{
-        const newUser = new User(req.body);
+        bcrypt.hash(req.body.password, saltRounds, async function(err, hash) {
+            const newUser = new User({
+            email: req.body.email,
+            password: hash
+        });
         await newUser.save();
         res.status(201).json(newUser);
+    });
+
     } catch(error){
         res.status(500).json(error.message);
     }
@@ -35,10 +44,16 @@ app.post("/register", async (req,res)=>{
 
 app.post("/login", async (req,res)=>{
     try{
-        const {email, password} = req.body;
+        const email = req.body.email;
+        const password = req.body.password;
         const user = await User.findOne({email: email});
-        if(user && user.password === password){
-            res.status(200).json({status:"Valid user"});
+        if(user){
+            bcrypt.compare(password, user.password, function(err, result) {
+                if(result == true){
+                    res.status(200).json({status:"Valid user"});
+                }
+            });
+            
         } else {
             res.status(404).json({status:"Not valid user"});
         }
