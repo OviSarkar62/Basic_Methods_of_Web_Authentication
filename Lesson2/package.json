@@ -1,0 +1,21 @@
+{
+  "name": "hashing_password",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Ovi Sarkar",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "md5": "^2.3.0",
+    "mongoose": "^7.0.3",
+    "mongoose-encryption": "^2.1.2",
+    "nodemon": "^2.0.22"
+  }
+}
